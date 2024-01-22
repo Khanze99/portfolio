@@ -10,7 +10,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Roboto Thin", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #444444;
 }
 
@@ -141,6 +141,7 @@ h6 {
 }
 
 #header .logo a {
+  font-family: "Roboto Thin", sans-serif;
   color: #fff;
 }
 
@@ -457,7 +458,7 @@ h6 {
 #hero .icon-box i {
   font-size: 32px;
   line-height: 1;
-  color: #ffc451;
+  color: #ffffff;
 }
 
 #hero .icon-box h3 {
@@ -546,6 +547,10 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+.ri-check-double-line{
+  color: #000 !important;
+}
+
 .about .content h3 {
   font-weight: 700;
   font-size: 28px;
@@ -629,7 +634,7 @@ section {
 .features .icon-box i {
   font-size: 48px;
   float: left;
-  color: #ffc451;
+  color: #000000;
 }
 
 .features .icon-box p {
@@ -660,7 +665,7 @@ section {
   margin: 0 auto;
   width: 64px;
   height: 64px;
-  background: #ffc451;
+  background: #ffffff;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -1397,6 +1402,14 @@ section {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+.copyright span {
+  font-family: "Roboto Thin", sans-serif;
+}
+
+#footer-logo{
+  font-family: "Roboto Thin", sans-serif;
+}
+
 #footer {
   background: black;
   padding: 0 0 30px 0;
