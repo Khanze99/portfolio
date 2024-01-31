@@ -1,0 +1,12 @@
+node_modules
+.eslintrc.json
+.prettierignore
+.prettirrc
+.package-lock.json
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
