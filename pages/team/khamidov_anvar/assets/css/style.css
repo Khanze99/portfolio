@@ -83,6 +83,10 @@ h6 {
   overflow-y: auto;
 }
 
+.profile-text{
+  margin-top: 30px !important;
+}
+
 #header .profile img {
   margin: 15px auto;
   display: block;
