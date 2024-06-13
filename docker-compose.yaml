@@ -1,0 +1,40 @@
+version: '3'
+
+
+services:
+  db:
+    image: postgres
+    container_name: khnz-db
+    environment:
+      POSTGRES_DB: 'khnzdb'
+      POSTGRES_USER: 'khnzuser'
+      POSTGRES_PASSWORD: 'khnz'
+    ports:
+      - 5432:5432
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+    networks:
+      - khnz_network
+
+  core:
+    build: .
+    restart: always
+    command: 'python manage.py runserver 0.0.0.0:8000'
+    expose:
+      - 8000
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./khnz:/app
+    depends_on:
+      - db
+    networks:
+      - khnz_network
+
+
+networks:
+  khnz_network:
+
+
+volumes:
+  db_volume:
