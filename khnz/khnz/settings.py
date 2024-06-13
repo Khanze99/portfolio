@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'khnz.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('POSTGRES_DB'),        # Название вашей базы данных
+        'USER': os.getenv('POSTGRES_USER'),     # Имя пользователя для подключения к базе данных
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),     # Пароль пользователя базы данных
+        'HOST': 'db',         # Хост базы данных. Если база данных находится на том же компьютере, что и Django, оставьте 'localhost'
+        'PORT': '5432',              # Порт базы данных PostgreSQL
     }
 }
 
@@ -116,7 +120,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
