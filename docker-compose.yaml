@@ -17,8 +17,7 @@ services:
       - khnz_network
 
   core:
-    build: .
-    restart: always
+    image: khnz-core
     command: 'python manage.py runserver 0.0.0.0:8000'
     expose:
       - 8000
