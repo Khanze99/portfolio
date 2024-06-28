@@ -10,6 +10,8 @@ class ServiceRequest(models.Model):
     customer_phone_number = PhoneNumberField(unique=True, null=True, blank=True)
     title = models.CharField(max_length=250)
     description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_viewed = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.title} - {self.email_customer}'
