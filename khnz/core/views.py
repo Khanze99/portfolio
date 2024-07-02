@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED
 
 from .serializers import ServiceRequestSerializer
+from .tasks import send_event_tg
 
 
 class ServiceRequestView(APIView):
@@ -19,4 +20,5 @@ class ServiceRequestView(APIView):
         serializer = self.serializer_class(data=data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        send_event_tg.delay(serializer.instance.pk)
         return Response(status=HTTP_201_CREATED)

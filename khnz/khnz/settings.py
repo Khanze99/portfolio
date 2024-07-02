@@ -81,9 +81,9 @@ WSGI_APPLICATION = 'khnz.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB'),        # Название вашей базы данных
-        'USER': os.getenv('POSTGRES_USER'),     # Имя пользователя для подключения к базе данных
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),     # Пароль пользователя базы данных
+        'NAME': os.getenv('DJANGO_DB_NAME'),        # Название вашей базы данных
+        'USER': os.getenv('DJANGO_DB_USER'),     # Имя пользователя для подключения к базе данных
+        'PASSWORD': os.getenv('DJANGO_DB_PASSWORD'),     # Пароль пользователя базы данных
         'HOST': 'db',         # Хост базы данных. Если база данных находится на том же компьютере, что и Django, оставьте 'localhost'
         'PORT': '5432',              # Порт базы данных PostgreSQL
     }
@@ -138,3 +138,6 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+TG_SECURE_TOKEN = os.getenv('TG_SECURE_TOKEN')
+TG_CHAT_ID = os.getenv('TG_CHAT_ID')
