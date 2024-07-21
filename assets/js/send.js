@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data[key] = value;
         });
 
-        axios.post('http://38.180.26.125:8000/api/service-request', data)
+        axios.post('https://khnz.tech/api/service-request', data)
             .then(response => {
                 console.log('Success:', response.data);
                 alert('Ваше сообщение было успешно отправлено');
