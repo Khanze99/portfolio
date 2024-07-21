@@ -17,7 +17,7 @@ services:
   nginx:
     image: nginx:latest
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/nginx.conf:/etc/nginx/sites-enabled/khnz.conf
     ports:
       - "80:80"
     depends_on:
